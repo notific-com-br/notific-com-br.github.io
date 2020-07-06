@@ -7,6 +7,8 @@ import { makeStyles, ThemeProvider, createMuiTheme} from "@material-ui/core/styl
 
 import VideoAbertura from './abertura.mp4';
 
+import { BrowserRouter as Router, Route } from "react-router-dom"
+
 const useStyles = makeStyles((theme) => ({
   grid: {
     minHeight: "90vh",
@@ -38,27 +40,26 @@ const theme = createMuiTheme({
     tonalOffset: 0.2,
   },
 });
+
 export default function GridSite() {
   const classes = useStyles();
   return (
       <Grid
         className={classes.grid}
-        spacing={2}
+        spacing={0}
         direction="column"
         justify="center"
         alignItems="center"
         container
       >
         <Grid xs={12} sm={12} item>
-            <Box p={2}>
             <video autoPlay playsInline muted width='100%'>
               <source src={VideoAbertura} type='video/mp4' />
             </video>
-            </Box>
         </Grid>
         <Grid xs={12} sm={12} item>
             <Box p={2}>
-            <Typography align='center' variant='h4' color='primary'>
+            <Typography align='center' variant='h5' color='primary'>
               Clique&nbsp;
               <Link href='#' color='secondary'>
                 aqui
@@ -74,11 +75,19 @@ export default function GridSite() {
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <GridSite />
+      <Router>
+        <Route path="/">
+          <GridSite />
+        </Route>
+        <Route path="/sobre-nos">
+          whaaaaaaaaallll
+        </Route>
+      </Router>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA

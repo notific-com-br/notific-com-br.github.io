@@ -30,10 +30,10 @@ const useStyles = makeStyles((theme) => ({
   },
   cardImage: {
     height: "400px",
-    minHeight: "25vh",
+    minHeight: "24vh",
   },
   cardBody: {
-    minHeight: "15vh"
+    minHeight: "20vh"
   }
 }));
 
@@ -100,10 +100,10 @@ export function AboutPage() {
       spacing={2}
       direction="row"
       justify="center"
-      alignItems="center"
+      alignItems="stretch"
       container
     >
-      <Grid xs={12} sm={4} item>
+      <Grid xs={12} lg={4} item>
         <Card>
             <CardMedia
               className={classes.cardImage}
@@ -140,7 +140,7 @@ export function AboutPage() {
             </CardActions>
         </Card>
       </Grid>
-      <Grid xs={12} sm={4} item>
+      <Grid xs={12} lg={4} item>
         <Card>
             <CardMedia
               className={classes.cardImage}
@@ -149,7 +149,7 @@ export function AboutPage() {
             />
             <CardContent className={classes.cardBody}>
               <Typography gutterBottom variant="h5">
-                Caio Adam Cardoso
+                Caio Adam Cardozo
               </Typography>
               <Typography variant="body2">
                 Mais de 8 anos de experiência 
@@ -175,7 +175,7 @@ export function AboutPage() {
             </CardActions>
         </Card>
       </Grid>
-      <Grid xs={12} sm={4} item>
+      <Grid xs={12} lg={4} item>
         <Card>
             <CardMedia
               className={classes.cardImage}
@@ -216,7 +216,7 @@ export function AboutPage() {
             </CardActions>
         </Card>
       </Grid>
-      <Grid xs={12} sm={4} item>
+      <Grid xs={12} lg={4} item>
         <Card>
             <CardMedia
               className={classes.cardImage}
@@ -255,7 +255,7 @@ export function AboutPage() {
             </CardActions>
         </Card>
       </Grid>
-      <Grid xs={12} sm={4} item>
+      <Grid xs={12} lg={4} item>
         <Card>
             <CardMedia
               className={classes.cardImage}

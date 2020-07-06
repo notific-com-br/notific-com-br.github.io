@@ -145,7 +145,7 @@ export function AboutPage() {
             <CardMedia
               className={classes.cardImage}
               image={process.env.PUBLIC_URL + '/caio.jpeg'}
-              title="Caio Adam Cardoso"
+              title="Caio Adam Cardozo"
             />
             <CardContent className={classes.cardBody}>
               <Typography gutterBottom variant="h5">

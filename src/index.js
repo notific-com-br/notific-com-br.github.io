@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route} from "react-router-dom"
+import {BrowserRouter as Router, Route, HashRouter} from "react-router-dom"
 
 import * as serviceWorker from './serviceWorker';
 
@@ -82,7 +82,7 @@ export default function IndexPage() {
         <Box p={2}>
           <Typography align='center' variant='h5' color='primary'>
             Clique&nbsp;
-              <Link href='/about' color='secondary'>
+              <Link href='/#/about' color='secondary'>
               aqui
               </Link>
               &nbsp;para saber quem somos.
@@ -299,7 +299,7 @@ export function AboutPage() {
 }
 
 ReactDOM.render(
-  <Router>
+  <HashRouter>
     <React.StrictMode>
       <ThemeProvider theme={theme}>
         <Route path="/about">
@@ -310,7 +310,7 @@ ReactDOM.render(
         </Route>
       </ThemeProvider>
     </React.StrictMode>
-  </Router>,
+  </HashRouter>,
   document.getElementById("root")
 );
 

@@ -27,13 +27,15 @@ import VideoAbertura from './abertura.mp4';
 const useStyles = makeStyles((theme) => ({
   grid: {
     minHeight: "90vh",
+    maxWidth: "1080px",
+    margin: "0 auto"
   },
   cardImage: {
     height: "400px",
-    minHeight: "24vh",
+    minHeight: "22vh",
   },
   cardBody: {
-    minHeight: "20vh"
+    minHeight: "22vh"
   }
 }));
 
@@ -97,6 +99,7 @@ export function AboutPage() {
   const classes = useStyles();
   return (
     <Grid
+      className={classes.grid}
       spacing={2}
       direction="row"
       justify="center"
@@ -264,7 +267,7 @@ export function AboutPage() {
             />
             <CardContent className={classes.cardBody}>
               <Typography gutterBottom variant="h5">
-                Paulo LL Nascimento Paixão
+                Paulo L. L. N. Paixão
               </Typography>
               <Typography variant="body2">
                 Advogado,

@@ -260,7 +260,7 @@ export function AboutPage() {
             <CardMedia
               className={classes.cardImage}
               image={process.env.PUBLIC_URL + '/paulo.jpg'}
-              title="Paulo LL Nascimento Paixao"
+              title="Paulo L. L. Nascimento Paixao"
             />
             <CardContent className={classes.cardBody}>
               <Typography gutterBottom variant="h5">

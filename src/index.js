@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route, HashRouter} from "react-router-dom"
+import {Route, HashRouter} from "react-router-dom"
 
 import * as serviceWorker from './serviceWorker';
 
@@ -10,7 +10,7 @@ import {
   Typography,
   Link,
   Box,
-  Paper,
+  //Paper,
   Card,
   CardMedia,
   CardContent,
@@ -23,6 +23,8 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import EmailIcon from '@material-ui/icons/Email';
+
 import VideoAbertura from './abertura.mp4';
 
 const useStyles = makeStyles((theme) => ({
@@ -111,11 +113,11 @@ export function AboutPage() {
               <CardMedia
                 className={classes.cardImage}
                 image={process.env.PUBLIC_URL + '/anniel.jpg'}
-                title="Anniel Menezes"
+                title="anniel menezes crus"
               />
               <CardContent className={classes.cardBody}>
                 <Typography gutterBottom variant="h5">
-                  Anniel Menezes
+                  Anniel Menezes Cruz
                 </Typography>
                 <Typography variant="body2">
                   Desenvolvedor full-stack, entusiasta de padrões da web e publicado por automação. 
@@ -128,18 +130,12 @@ export function AboutPage() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button>
-                  <FacebookIcon />
-                </Button>
-                <Button>
-                  <InstagramIcon/>
-                </Button>
-                <Button>
+                <Link href="https://www.linkedin.com/in/annielmenezes/" >
                   <LinkedInIcon />
-                </Button>
-                <Button>
+                </Link>
+                <Link href="https://github.com/annielmenezes/">
                   <GitIcon />
-                </Button>
+                </Link>
               </CardActions>
           </Card>
         </Grid>
@@ -148,7 +144,7 @@ export function AboutPage() {
               <CardMedia
                 className={classes.cardImage}
                 image={process.env.PUBLIC_URL + '/caio.jpeg'}
-                title="Caio Adam Cardozo"
+                title="Caio Adam Cardoso"
               />
               <CardContent className={classes.cardBody}>
                 <Typography gutterBottom variant="h5">
@@ -163,18 +159,18 @@ export function AboutPage() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button>
+                <Link href="https://m.facebook.com/profile.php?id=1829885651" >
                   <FacebookIcon />
-                </Button>
-                <Button>
+                </Link>
+                <Link href="http://www.instagram.com/caioadam_">
                   <InstagramIcon/>
-                </Button>
-                <Button>
+                </Link>
+                <Link href="https://br.linkedin.com/in/caio-adam-cardozo-29421268" >
                   <LinkedInIcon />
-                </Button>
-                <Button>
+                </Link>
+                <Link href="https://github.com/caioadam">
                   <GitIcon />
-                </Button>
+                </Link>
               </CardActions>
           </Card>
         </Grid>
@@ -183,11 +179,11 @@ export function AboutPage() {
               <CardMedia
                 className={classes.cardImage}
                 image={process.env.PUBLIC_URL + '/el.jpg'}
-                title="El Damacena"
+                title="Jesiel Damacena Filho"
               />
               <CardContent className={classes.cardBody}>
                 <Typography gutterBottom variant="h5">
-                  El Damacena
+                  Jesiel Damacena Filho
                 </Typography>
                 <Typography variant="body2">
                   Mais um dáriomeirense que ama a sua terra. 
@@ -204,18 +200,15 @@ export function AboutPage() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button>
+                <Link href="https://www.facebook.com/el.damacena" >
                   <FacebookIcon />
-                </Button>
-                <Button>
+                </Link>
+                <Link href="http://www.instagram.com/eldamacena">
                   <InstagramIcon/>
-                </Button>
-                <Button>
-                  <LinkedInIcon />
-                </Button>
-                <Button>
-                  <GitIcon />
-                </Button>
+                </Link>
+                <Link href="mailto:eldamacena@hotmail.com">
+                  <EmailIcon/>
+                </Link>
               </CardActions>
           </Card>
         </Grid>
@@ -243,18 +236,15 @@ export function AboutPage() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button>
-                  <FacebookIcon />
-                </Button>
-                <Button>
-                  <InstagramIcon/>
-                </Button>
-                <Button>
-                  <LinkedInIcon />
-                </Button>
-                <Button>
+                <Link href="https://github.com/gcgbarbosa">
                   <GitIcon />
-                </Button>
+                </Link>
+                <Link href="https://www.linkedin.com/in/gcgbarbosa/">
+                  <LinkedInIcon/>
+                </Link>
+                <Link href="http://www.instagram.com/gcgbarbosa">
+                  <InstagramIcon/>
+                </Link>
               </CardActions>
           </Card>
         </Grid>
@@ -282,18 +272,15 @@ export function AboutPage() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button>
+                <Link href="https://instagram.com/paulolaerciopaixao">
+                  <InstagramIcon />
+                </Link>
+                <Link href="https://www.facebook.com/paulo.paixao.12">
                   <FacebookIcon />
-                </Button>
-                <Button>
-                  <InstagramIcon/>
-                </Button>
-                <Button>
-                  <LinkedInIcon />
-                </Button>
-                <Button>
-                  <GitIcon />
-                </Button>
+                </Link>
+                <Link href="mailto:paulolaerciopaixao@gmail.com">
+                  <EmailIcon />
+                </Link>
               </CardActions>
           </Card>
         </Grid>

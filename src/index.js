@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "18vh",
   },
   cardBody: {
-    minHeight: "350px"
+    minHeight: "350px",
   }
 }));
 
@@ -68,7 +68,7 @@ const theme = createMuiTheme({
 export default function IndexPage() {
   const classes = useStyles();
   return (
-    <Container maxWidth='lg'>
+    <Container maxWidth='md'>
       <Grid
         className={classes.grid}
         spacing={0}

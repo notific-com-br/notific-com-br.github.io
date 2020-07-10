@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "18vh",
   },
   cardBody: {
-    minHeight: "18vh"
+    minHeight: "350px"
   }
 }));
 
@@ -68,31 +68,33 @@ const theme = createMuiTheme({
 export default function IndexPage() {
   const classes = useStyles();
   return (
-    <Grid
-      className={classes.grid}
-      spacing={0}
-      direction="column"
-      justify="center"
-      alignItems="center"
-      container
-    >
-      <Grid xs={12} sm={12} item>
-        <video autoPlay playsInline muted width='100%'>
-          <source src={VideoAbertura} type='video/mp4' />
-        </video>
+    <Container maxWidth='lg'>
+      <Grid
+        className={classes.grid}
+        spacing={0}
+        direction="column"
+        justify="center"
+        alignItems="center"
+        container
+      >
+        <Grid xs={12} sm={12} item>
+          <video autoPlay playsInline muted width='100%'>
+            <source src={VideoAbertura} type='video/mp4' />
+          </video>
+        </Grid>
+        <Grid xs={12} sm={12} item>
+          <Box p={2}>
+            <Typography align='center' variant='h5' color='primary'>
+              Clique&nbsp;
+                <Link href='/#/about' color='secondary'>
+                aqui
+                </Link>
+                &nbsp;para saber quem somos.
+              </Typography>
+          </Box>
+        </Grid>
       </Grid>
-      <Grid xs={12} sm={12} item>
-        <Box p={2}>
-          <Typography align='center' variant='h5' color='primary'>
-            Clique&nbsp;
-              <Link href='/#/about' color='secondary'>
-              aqui
-              </Link>
-              &nbsp;para saber quem somos.
-            </Typography>
-        </Box>
-      </Grid>
-    </Grid>
+    </Container>
   );
 }
 
@@ -130,10 +132,10 @@ export function AboutPage() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Link href="https://www.linkedin.com/in/annielmenezes/" >
+                <Link target='_blank' href="https://www.linkedin.com/in/annielmenezes/" >
                   <LinkedInIcon />
                 </Link>
-                <Link href="https://github.com/annielmenezes/">
+                <Link target='_blank' href="https://github.com/annielmenezes/">
                   <GitIcon />
                 </Link>
               </CardActions>
@@ -159,16 +161,16 @@ export function AboutPage() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Link href="https://m.facebook.com/profile.php?id=1829885651" >
+                <Link target='_blank' href="https://facebook.com/profile.php?id=1829885651" >
                   <FacebookIcon />
                 </Link>
-                <Link href="http://www.instagram.com/caioadam_">
+                <Link target='_blank'href="http://www.instagram.com/caioadam_">
                   <InstagramIcon/>
                 </Link>
-                <Link href="https://br.linkedin.com/in/caio-adam-cardozo-29421268" >
+                <Link target='_blank' href="https://br.linkedin.com/in/caio-adam-cardozo-29421268" >
                   <LinkedInIcon />
                 </Link>
-                <Link href="https://github.com/caioadam">
+                <Link target='_blank' href="https://github.com/caioadam">
                   <GitIcon />
                 </Link>
               </CardActions>
@@ -200,10 +202,10 @@ export function AboutPage() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Link href="https://www.facebook.com/el.damacena" >
+                <Link target='_blank' href="https://www.facebook.com/el.damacena" >
                   <FacebookIcon />
                 </Link>
-                <Link href="http://www.instagram.com/eldamacena">
+                <Link target='_blank' href="http://www.instagram.com/eldamacena">
                   <InstagramIcon/>
                 </Link>
                 <Link href="mailto:eldamacena@hotmail.com">
@@ -236,13 +238,13 @@ export function AboutPage() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Link href="https://github.com/gcgbarbosa">
+                <Link target='_blank' href="https://github.com/gcgbarbosa">
                   <GitIcon />
                 </Link>
-                <Link href="https://www.linkedin.com/in/gcgbarbosa/">
+                <Link target='_blank' href="https://www.linkedin.com/in/gcgbarbosa/">
                   <LinkedInIcon/>
                 </Link>
-                <Link href="http://www.instagram.com/gcgbarbosa">
+                <Link target='_blank' href="http://www.instagram.com/gcgbarbosa">
                   <InstagramIcon/>
                 </Link>
               </CardActions>

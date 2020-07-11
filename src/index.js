@@ -8,6 +8,7 @@ import {ThemeProvider, createMuiTheme} from "@material-ui/core/styles"
 
 import AboutUsPage from './AboutUsPage'
 import IndexPage from './IndexPage'
+import CovidPage from './CovidPage'
 
 // primary: '#19F59F',
 const theme = createMuiTheme({
@@ -38,6 +39,9 @@ ReactDOM.render(
   <HashRouter>
     <React.StrictMode>
       <ThemeProvider theme={theme}>
+        <Route path="/covid">
+          <CovidPage/>
+        </Route>
         <Route path="/about">
           <AboutUsPage />
         </Route>

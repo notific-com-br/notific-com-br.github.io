@@ -4,23 +4,10 @@ import {Route, HashRouter} from "react-router-dom"
 
 import * as serviceWorker from './serviceWorker';
 
-import {makeStyles, ThemeProvider, createMuiTheme} from "@material-ui/core/styles"
+import {ThemeProvider, createMuiTheme} from "@material-ui/core/styles"
 
 import AboutUsPage from './AboutUsPage'
 import IndexPage from './IndexPage'
-
-const useStyles = makeStyles((theme) => ({
-  grid: {
-    minHeight: "90vh",
-  },
-  cardImage: {
-    height: "400px",
-    minHeight: "18vh",
-  },
-  cardBody: {
-    minHeight: "350px",
-  }
-}));
 
 // primary: '#19F59F',
 const theme = createMuiTheme({

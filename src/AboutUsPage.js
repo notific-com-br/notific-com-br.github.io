@@ -49,7 +49,7 @@ export default function AboutUsPage() {
             <CardMedia
               className={classes.cardImage}
               image={process.env.PUBLIC_URL + '/anniel.jpg'}
-              title="anniel menezes crus"
+              title="Anniel Menezes Cruz"
             />
             <CardContent className={classes.cardBody}>
               <Typography gutterBottom variant="h5">

@@ -34,7 +34,7 @@ const theme = createMuiTheme({
     tonalOffset: 0.2,
   },
   typography: {
-    fontSize: 10,
+    fontSize: 8,
   }
 });
 

@@ -48,7 +48,7 @@ export function SinteseComponent() {
       spacing={1}
     >
       <Grid lg={12} xs={12} item>
-        <Paper>
+        <Paper variant='outlined' style={{background: '#195599', color:'white'}}>
           <Box p={2}>
             <Typography variant='h6'>
               Síntese
@@ -57,9 +57,9 @@ export function SinteseComponent() {
         </Paper>
       </Grid>
       <Grid lg={4} xs={12} item>
-        <Card className={classes.card}>
+        <Card className={classes.card} style={{background:'#FFCC29'}}>
           <CardContent>
-            <Typography variant='body1'>
+            <Typography variant='h6'>
               Confirmados
             </Typography>
             <Typography variant='h4'>
@@ -79,9 +79,9 @@ export function SinteseComponent() {
         </Card>
       </Grid>
       <Grid lg={4} xs={12} item>
-        <Card className={classes.card}>
+        <Card className={classes.card} style={{background:'#2568B0'}}>
           <CardContent>
-            <Typography variant='body1'>
+            <Typography variant='h6'>
               Recuperados
             </Typography>
             <Typography variant='h4'>
@@ -103,10 +103,10 @@ export function SinteseComponent() {
       <Grid lg={4} xs={12} item>
         <Card className={classes.card}>
           <CardContent>
-            <Typography variant='body1'>
+            <Typography variant='h6'>
               Óbito
             </Typography>
-            <Typography variant='h6'>
+            <Typography variant='h4'>
               1
             </Typography>
             <Typography variant='body2' gutterBottom>
@@ -172,7 +172,7 @@ export function VizualizacaoComponent() {
   return (
     <Box display='flex' flexDirection='column' spacing={2}>
       <Box item>
-        <Paper>
+        <Paper variant='outlined' style={{background: '#195599', color:'white'}}>
           <Box p={2}>
             <Typography variant='h6'>
               Casos novos de covid por data de notificação
@@ -190,7 +190,7 @@ export function VizualizacaoComponent() {
                 <XAxis dataKey="data" />
                 <YAxis />
                 <Tooltip />
-                <Line type='monotone' dataKey='casos' stroke='#8884d8' fill='#8884d8' />
+                <Line type='monotone' dataKey='casos' stroke='#195599' />
               </LineChart>
             </ResponsiveContainer>
           </Box>
@@ -201,7 +201,6 @@ export function VizualizacaoComponent() {
 }
 
 export default function CovidPage() {
-  const classes = useStyles();
   return (
     <Container maxWidth='lg'>
       <Box display='flex' flexDirection='column' mt={4}>

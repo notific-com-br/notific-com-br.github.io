@@ -133,7 +133,7 @@ class SinteseComponent extends React.Component {
         <Grid lg={12} xs={12} item>
           <TableContainer component={Paper}>
             <Table aria-label='detalhes por distrito'>
-              <caption>Fonte: Prefeitura de Dario Meira</caption>
+              <caption>Fonte: Prefeitura municipal de Dario Meira</caption>
               <TableHead>
                 <TableRow>
                   <TableCell>Local</TableCell>
@@ -189,7 +189,7 @@ class VizualizacaoComponent extends React.Component {
             <Box p={2}>
               <ResponsiveContainer width='100%' height={400}>
                 <LineChart data={this.props.data}
-                  margin={{top: 0, right: 0, left: -30, bottom: 0}}>
+                  margin={{top: 5, right: 5, left: -30, bottom: 0}}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="data" />
                   <YAxis />

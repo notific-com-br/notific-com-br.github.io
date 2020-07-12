@@ -21,14 +21,14 @@ import EmailIcon from '@material-ui/icons/Email';
 
 const useStyles = makeStyles((theme) => ({
   grid: {
-    minHeight: "90vh",
   },
   cardImage: {
     height: "400px",
-    minHeight: "18vh",
   },
   cardBody: {
-    minHeight: "350px",
+  },
+  card: {
+    height: "100%",
   }
 }));
 
@@ -45,12 +45,20 @@ export default function AboutUsPage() {
         container
       >
         <Grid xs={12} lg={4} item>
-          <Card>
+          <Card className={classes.card}>
             <CardMedia
               className={classes.cardImage}
               image={process.env.PUBLIC_URL + '/anniel.jpg'}
               title="Anniel Menezes Cruz"
             />
+            <CardActions>
+              <Link target='_blank' href="https://www.linkedin.com/in/annielmenezes/" >
+                <LinkedInIcon />
+              </Link>
+              <Link target='_blank' href="https://github.com/annielmenezes/">
+                <GitIcon />
+              </Link>
+            </CardActions>
             <CardContent className={classes.cardBody}>
               <Typography gutterBottom variant="h5">
                 Anniel Menezes Cruz
@@ -65,35 +73,15 @@ export default function AboutUsPage() {
                 PHP, Git, Photshop / Sketch para cortar imagens, Agile (Scrum, XP).
                 </Typography>
             </CardContent>
-            <CardActions>
-              <Link target='_blank' href="https://www.linkedin.com/in/annielmenezes/" >
-                <LinkedInIcon />
-              </Link>
-              <Link target='_blank' href="https://github.com/annielmenezes/">
-                <GitIcon />
-              </Link>
-            </CardActions>
           </Card>
         </Grid>
         <Grid xs={12} lg={4} item>
-          <Card>
+          <Card className={classes.card}>
             <CardMedia
               className={classes.cardImage}
               image={process.env.PUBLIC_URL + '/caio.jpeg'}
               title="Caio Adam Cardoso"
             />
-            <CardContent className={classes.cardBody}>
-              <Typography gutterBottom variant="h5">
-                Caio Adam Cardozo
-                </Typography>
-              <Typography variant="body2">
-                Mais de 8 anos de experiência
-                em uma das maiores empresas de comunicação visual do interior da Bahia.
-                Servidor Público na prefeitura Municipal de Jequié.
-                Atualmente também colaborando com a Agência de Publicidade 1 Ponto,
-                prestando serviços Gráficos e de Motion Flyer.
-                </Typography>
-            </CardContent>
             <CardActions>
               <Link target='_blank' href="https://facebook.com/profile.php?id=1829885651" >
                 <FacebookIcon />
@@ -108,15 +96,38 @@ export default function AboutUsPage() {
                 <GitIcon />
               </Link>
             </CardActions>
+            <CardContent className={classes.cardBody}>
+              <Typography gutterBottom variant="h5">
+                Caio Adam Cardozo
+                </Typography>
+              <Typography variant="body2">
+                Mais de 8 anos de experiência
+                em uma das maiores empresas de comunicação visual do interior da Bahia.
+                Servidor Público na prefeitura Municipal de Jequié.
+                Atualmente também colaborando com a Agência de Publicidade 1 Ponto,
+                prestando serviços Gráficos e de Motion Flyer.
+                </Typography>
+            </CardContent>
           </Card>
         </Grid>
         <Grid xs={12} lg={4} item>
-          <Card>
+          <Card className={classes.card}>
             <CardMedia
               className={classes.cardImage}
               image={process.env.PUBLIC_URL + '/el.jpg'}
               title="Jesiel Damacena Filho"
             />
+            <CardActions>
+              <Link target='_blank' href="https://www.facebook.com/el.damacena" >
+                <FacebookIcon />
+              </Link>
+              <Link target='_blank' href="http://www.instagram.com/eldamacena">
+                <InstagramIcon />
+              </Link>
+              <Link href="mailto:eldamacena@hotmail.com">
+                <EmailIcon />
+              </Link>
+            </CardActions>
             <CardContent className={classes.cardBody}>
               <Typography gutterBottom variant="h5">
                 Jesiel Damacena Filho
@@ -135,26 +146,26 @@ export default function AboutUsPage() {
                 Costumo dizer que sou abençoado por tudo o que tenho.
                 </Typography>
             </CardContent>
-            <CardActions>
-              <Link target='_blank' href="https://www.facebook.com/el.damacena" >
-                <FacebookIcon />
-              </Link>
-              <Link target='_blank' href="http://www.instagram.com/eldamacena">
-                <InstagramIcon />
-              </Link>
-              <Link href="mailto:eldamacena@hotmail.com">
-                <EmailIcon />
-              </Link>
-            </CardActions>
           </Card>
         </Grid>
         <Grid xs={12} lg={4} item>
-          <Card>
+          <Card className={classes.card}>
             <CardMedia
               className={classes.cardImage}
               image={process.env.PUBLIC_URL + '/george.jpg'}
               title="George C. G. Barbosa"
             />
+            <CardActions>
+              <Link target='_blank' href="https://github.com/gcgbarbosa">
+                <GitIcon />
+              </Link>
+              <Link target='_blank' href="https://www.linkedin.com/in/gcgbarbosa/">
+                <LinkedInIcon />
+              </Link>
+              <Link target='_blank' href="http://www.instagram.com/gcgbarbosa">
+                <InstagramIcon />
+              </Link>
+            </CardActions>
             <CardContent className={classes.cardBody}>
               <Typography gutterBottom variant="h5">
                 George C. G. Barbosa
@@ -171,17 +182,6 @@ export default function AboutUsPage() {
                 e ligar para minha mãe.
                 </Typography>
             </CardContent>
-            <CardActions>
-              <Link target='_blank' href="https://github.com/gcgbarbosa">
-                <GitIcon />
-              </Link>
-              <Link target='_blank' href="https://www.linkedin.com/in/gcgbarbosa/">
-                <LinkedInIcon />
-              </Link>
-              <Link target='_blank' href="http://www.instagram.com/gcgbarbosa">
-                <InstagramIcon />
-              </Link>
-            </CardActions>
           </Card>
         </Grid>
         <Grid xs={12} lg={4} item>
@@ -191,6 +191,17 @@ export default function AboutUsPage() {
               image={process.env.PUBLIC_URL + '/paulo.jpg'}
               title="Paulo L. L. Nascimento Paixao"
             />
+            <CardActions>
+              <Link href="https://instagram.com/paulolaerciopaixao">
+                <InstagramIcon />
+              </Link>
+              <Link href="https://www.facebook.com/paulo.paixao.12">
+                <FacebookIcon />
+              </Link>
+              <Link href="mailto:paulolaerciopaixao@gmail.com">
+                <EmailIcon />
+              </Link>
+            </CardActions>
             <CardContent className={classes.cardBody}>
               <Typography gutterBottom variant="h5">
                 Paulo L. L. N. Paixão
@@ -207,17 +218,6 @@ export default function AboutUsPage() {
                 Em síntese, um cara chato que duvida de tudo mas adora uma boa discussão.
                 </Typography>
             </CardContent>
-            <CardActions>
-              <Link href="https://instagram.com/paulolaerciopaixao">
-                <InstagramIcon />
-              </Link>
-              <Link href="https://www.facebook.com/paulo.paixao.12">
-                <FacebookIcon />
-              </Link>
-              <Link href="mailto:paulolaerciopaixao@gmail.com">
-                <EmailIcon />
-              </Link>
-            </CardActions>
           </Card>
         </Grid>
       </Grid>

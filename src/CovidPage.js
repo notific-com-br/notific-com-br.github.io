@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-
+import React from 'react';
 
 import {
   Box,
@@ -19,8 +18,6 @@ import {
   TableContainer,
 } from '@material-ui/core';
 
-import {makeStyles, withStyles} from '@material-ui/core/styles'
-
 import {
   LineChart,
   XAxis,
@@ -32,7 +29,6 @@ import {
 } from 'recharts';
 
 import axios from 'axios';
-
 
 class SinteseComponent extends React.Component {
 
@@ -91,7 +87,7 @@ class SinteseComponent extends React.Component {
           </Card>
         </Grid>
         <Grid lg={4} xs={12} item>
-          <Card style={{background: '#2568B0', height:'100%'}}>
+          <Card style={{background: '#2568B0', height:'100%', color: 'white'}}>
             <CardContent>
               <Typography variant='h6'>
                 Recuperados
@@ -230,7 +226,13 @@ class CovidPage extends React.Component {
       var obj = {};
       var currentline = lines[i].split("\t");
       for (var j = 0; j < headers.length; j++) {
-        obj[headers[j]] = parseInt(currentline[j]);
+        if(headers[j] !== 'data'){
+          obj[headers[j]] = parseInt(currentline[j]);
+        } else {
+          let parts = currentline[j].split('-')
+          let d = new Date(parts[0], parts[1], parts[2])
+          obj[headers[j]] = d.getDate() + '/' + d.getMonth()
+        }
       }
       result.push(obj);
     }

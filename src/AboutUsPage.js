@@ -9,6 +9,7 @@ import {
   CardContent,
   CardActions,
   Link,
+  Box,
 } from '@material-ui/core'
 
 import {makeStyles} from '@material-ui/core/styles'
@@ -36,6 +37,7 @@ export default function AboutUsPage() {
   const classes = useStyles();
   return (
     <Container maxWidth='lg'>
+      <Box mt={4}>
       <Grid
         className={classes.grid}
         spacing={2}
@@ -221,6 +223,7 @@ export default function AboutUsPage() {
           </Card>
         </Grid>
       </Grid>
+      </Box>
     </Container>
   );
 }

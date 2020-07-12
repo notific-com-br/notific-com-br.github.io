@@ -38,7 +38,7 @@ class SinteseComponent extends React.Component {
       confirmados_recente: 10,
       recuperados: 38,
       recuperados_recente: 10,
-      obitos: 38,
+      obitos: 1,
       obitos_recente: 10,
       acompanhamento: 189,
       descartados: 68,

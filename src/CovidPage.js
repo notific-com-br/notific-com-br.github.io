@@ -115,7 +115,6 @@ class SinteseComponent extends React.Component {
                 Óbitos
               </Typography>
               <Typography variant='h4'>
-                1
                 {data.obitos}
               </Typography>
               <Typography variant='body2' gutterBottom>

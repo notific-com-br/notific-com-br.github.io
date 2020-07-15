@@ -67,6 +67,7 @@ class SinteseComponent extends React.Component {
       data.casos_sede = lastRow.casos_sede
       data.casos_acaraci = lastRow.casos_acaraci
       data.casos_p_iris = lastRow.casos_p_iris
+      data.casos_p_novo = lastRow.casos_p_novo
       // obitos detalhes
       data.obitos_p_iris = lastRow.obitos_p_iris
       data.obitos_p_novo = lastRow.obitos_p_novo

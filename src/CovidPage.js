@@ -52,6 +52,26 @@ class SinteseComponent extends React.Component {
       casos_p_iris: 0,
     };
     if (this.props.data.length) {
+      let lastRow = this.props.data[this.props.data.length -1]
+      data.confirmados = lastRow.confirmados_total
+      data.confirmados_recente = lastRow.confirmados
+      data.recuperados = lastRow.recuperados_total
+      data.recuperados_recente = lastRow.recuperados
+      data.obitos = lastRow.obitos_total
+      data.obitos_recente = lastRow.obitos
+      data.acompanhamento = lastRow.acompanhamento
+      data.descartados = lastRow.descartados
+      data.ativos = lastRow.ativos
+      // casos detalhes
+      data.casos_p_iris = lastRow.casos_p_iris
+      data.casos_sede = lastRow.casos_sede
+      data.casos_acaraci = lastRow.casos_acaraci
+      data.casos_p_iris = lastRow.casos_p_iris
+      // obitos detalhes
+      data.obitos_p_iris = lastRow.obitos_p_iris
+      data.obitos_p_novo = lastRow.obitos_p_novo
+      data.obitos_acaraci = lastRow.obitos_acaraci
+      data.obitos_sede = lastRow.obitos_sede
       console.log(this.props.data);
     }
     return (
@@ -186,7 +206,6 @@ class VizualizacaoComponent extends React.Component {
                   <YAxis />
                   <Tooltip />
                   <Line type="monotone" dataKey="confirmados" stroke="#195599" />
-                  <Line type="monotone" dataKey='recuperados' stroke='#FFCC29' />
                 </LineChart>
               </ResponsiveContainer>
             </Box>

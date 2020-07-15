@@ -228,7 +228,7 @@ class CovidPage extends React.Component {
         this.setState({ data: this.tsvJSON(res.data) });
       });
   }
-
+  zeroPad = (num, places) => String(num).padStart(places, '0')
   tsvJSON(tsv) {
     var lines = tsv.split("\n");
     var result = [];
@@ -242,7 +242,7 @@ class CovidPage extends React.Component {
         } else {
           let parts = currentline[j].split("-");
           let d = new Date(parts[0], parts[1], parts[2]);
-          obj[headers[j]] = d.getDate() + "/" + d.getMonth();
+          obj[headers[j]] = this.zeroPad(d.getDate(), 2) + "/" + this.zeroPad(d.getMonth(), 2);
         }
       }
       result.push(obj);

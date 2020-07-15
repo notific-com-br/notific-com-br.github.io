@@ -33,15 +33,15 @@ import axios from "axios";
 class SinteseComponent extends React.Component {
   render() {
     let data = {
-      confirmados: 120,
-      confirmados_recente: 10,
-      recuperados: 38,
-      recuperados_recente: 10,
-      obitos: 1,
+      confirmados: 0,
+      confirmados_recente: 0,
+      recuperados: 0,
+      recuperados_recente: 0,
+      obitos: 0,
       obitos_recente: 0,
-      acompanhamento: 189,
-      descartados: 68,
-      ativos: 82,
+      acompanhamento: 0,
+      descartados: 0,
+      ativos: 0,
       obitos_acaraci: 0,
       obitos_p_novo: 0,
       obitos_sede: 0,
@@ -150,23 +150,23 @@ class SinteseComponent extends React.Component {
               <TableBody>
                 <TableRow>
                   <TableCell>Acaraci</TableCell>
-                  <TableCell>9</TableCell>
-                  <TableCell>0</TableCell>
+                  <TableCell>{data.casos_acaraci}</TableCell>
+                  <TableCell>{data.obitos_acaraci}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Planalto Iris</TableCell>
-                  <TableCell>3</TableCell>
-                  <TableCell>0</TableCell>
+                  <TableCell>{data.casos_p_iris}</TableCell>
+                  <TableCell>{data.obitos_p_iris}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Ponto Novo</TableCell>
-                  <TableCell>4</TableCell>
-                  <TableCell>0</TableCell>
+                  <TableCell>{data.casos_p_novo}</TableCell>
+                  <TableCell>{data.obitos_p_novo}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Sede</TableCell>
-                  <TableCell>104</TableCell>
-                  <TableCell>1</TableCell>
+                  <TableCell>{data.casos_sede}</TableCell>
+                  <TableCell>{data.obitos_sede}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

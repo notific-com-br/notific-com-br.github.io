@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import {Grid, Container, Box, Typography, Link} from '@material-ui/core'
-import VideoAbertura from './abertura.mp4';
+import { Grid, Container, Box, Typography, Link } from "@material-ui/core";
+import VideoAbertura from "./abertura.mp4";
+import BannerCovid from "./covid.gif";
 
-import {makeStyles} from '@material-ui/core/styles'
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
   grid: {
@@ -15,14 +16,13 @@ const useStyles = makeStyles(() => ({
   },
   cardBody: {
     minHeight: "350px",
-  }
+  },
 }));
-
 
 export default function IndexPage() {
   const classes = useStyles();
   return (
-    <Container maxWidth='md'>
+    <Container maxWidth="md">
       <Grid
         className={classes.grid}
         spacing={0}
@@ -32,19 +32,26 @@ export default function IndexPage() {
         container
       >
         <Grid xs={12} sm={12} item>
-          <video autoPlay playsInline muted width='100%'>
-            <source src={VideoAbertura} type='video/mp4' />
+          <a href='/#/covid'>
+            <img
+              width="100%"
+              alt="Banner com link para informacoes sobre covid19"
+              src={BannerCovid}
+            />
+          </a>
+        </Grid>
+        <Grid xs={12} sm={12} item>
+          <video autoPlay playsInline muted width="100%">
+            <source src={VideoAbertura} type="video/mp4" />
           </video>
         </Grid>
         <Grid xs={12} sm={12} item>
           <Box p={2}>
-            <Typography align='center' variant='h5' color='primary'>
-              Clique&nbsp;
-                <Link href='/#/about' color='secondary'>
-                aqui
-                </Link>
-                &nbsp;para saber quem somos.
-              </Typography>
+            <Typography align="center" variant="h5" color="primary">
+              <Link href="/#/about" color="secondary">
+                Quem somos
+              </Link>
+            </Typography>
           </Box>
         </Grid>
       </Grid>

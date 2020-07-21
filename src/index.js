@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, HashRouter} from "react-router-dom"
+import { Route, HashRouter } from 'react-router-dom';
 
 import * as serviceWorker from './serviceWorker';
 
-import {ThemeProvider, createMuiTheme} from "@material-ui/core/styles"
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-import AboutUsPage from './AboutUsPage'
-import IndexPage from './IndexPage'
-import CovidPage from './CovidPage'
+import AboutUsPage from './AboutUsPage';
+import IndexPage from './IndexPage';
+import CovidPage from './CovidPage';
 
 // primary: '#19F59F',
 const theme = createMuiTheme({
@@ -35,7 +35,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontSize: 18,
-  }
+  },
 });
 
 ReactDOM.render(
@@ -43,18 +43,18 @@ ReactDOM.render(
     <React.StrictMode>
       <ThemeProvider theme={theme}>
         <Route path="/covid">
-          <CovidPage/>
+          <CovidPage />
         </Route>
         <Route path="/about">
           <AboutUsPage />
         </Route>
-        <Route exact path="/" >
+        <Route exact path="/">
           <IndexPage />
         </Route>
       </ThemeProvider>
     </React.StrictMode>
   </HashRouter>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

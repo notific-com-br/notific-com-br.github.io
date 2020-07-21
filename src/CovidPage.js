@@ -1,5 +1,4 @@
-import React from "react";
-
+import React from 'react';
 import {
   Box,
   Paper,
@@ -7,7 +6,6 @@ import {
   Container,
   Card,
   CardContent,
-  //CardActions,
   Typography,
   Divider,
   Table,
@@ -16,19 +14,10 @@ import {
   TableCell,
   TableBody,
   TableContainer,
-} from "@material-ui/core";
-
-import {
-  LineChart,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Line,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
-
-import axios from "axios";
+} from '@material-ui/core';
+import axios from 'axios';
+import { tsvJSON } from './helpers/tsv-to-json';
+import { Chart } from './components/chart/chart.component';
 
 class SinteseComponent extends React.Component {
   render() {
@@ -52,28 +41,27 @@ class SinteseComponent extends React.Component {
       casos_p_iris: 0,
     };
     if (this.props.data.length) {
-      let lastRow = this.props.data[this.props.data.length -1]
-      data.confirmados = lastRow.confirmados_total
-      data.confirmados_recente = lastRow.confirmados
-      data.recuperados = lastRow.recuperados_total
-      data.recuperados_recente = lastRow.recuperados
-      data.obitos = lastRow.obitos_total
-      data.obitos_recente = lastRow.obitos
-      data.acompanhamento = lastRow.acompanhamento
-      data.descartados = lastRow.descartados
-      data.ativos = lastRow.ativos
+      let lastRow = this.props.data[this.props.data.length - 1];
+      data.confirmados = lastRow.confirmados_total;
+      data.confirmados_recente = lastRow.confirmados;
+      data.recuperados = lastRow.recuperados_total;
+      data.recuperados_recente = lastRow.recuperados;
+      data.obitos = lastRow.obitos_total;
+      data.obitos_recente = lastRow.obitos;
+      data.acompanhamento = lastRow.acompanhamento;
+      data.descartados = lastRow.descartados;
+      data.ativos = lastRow.ativos;
       // casos detalhes
-      data.casos_p_iris = lastRow.casos_p_iris
-      data.casos_sede = lastRow.casos_sede
-      data.casos_acaraci = lastRow.casos_acaraci
-      data.casos_p_iris = lastRow.casos_p_iris
-      data.casos_p_novo = lastRow.casos_p_novo
+      data.casos_p_iris = lastRow.casos_p_iris;
+      data.casos_sede = lastRow.casos_sede;
+      data.casos_acaraci = lastRow.casos_acaraci;
+      data.casos_p_iris = lastRow.casos_p_iris;
+      data.casos_p_novo = lastRow.casos_p_novo;
       // obitos detalhes
-      data.obitos_p_iris = lastRow.obitos_p_iris
-      data.obitos_p_novo = lastRow.obitos_p_novo
-      data.obitos_acaraci = lastRow.obitos_acaraci
-      data.obitos_sede = lastRow.obitos_sede
-      console.log(this.props.data);
+      data.obitos_p_iris = lastRow.obitos_p_iris;
+      data.obitos_p_novo = lastRow.obitos_p_novo;
+      data.obitos_acaraci = lastRow.obitos_acaraci;
+      data.obitos_sede = lastRow.obitos_sede;
     }
     return (
       <Grid
@@ -83,18 +71,8 @@ class SinteseComponent extends React.Component {
         alignItems="stretch"
         spacing={1}
       >
-        <Grid lg={12} xs={12} item>
-          <Paper
-            variant="outlined"
-            style={{ background: "#195599", color: "white" }}
-          >
-            <Box p={2}>
-              <Typography variant="h6">Síntese</Typography>
-            </Box>
-          </Paper>
-        </Grid>
         <Grid lg={4} xs={12} item>
-          <Card style={{ background: "#FFCC29", height: "100%" }}>
+          <Card style={{ background: '#FFCC29', height: '100%' }}>
             <CardContent>
               <Typography variant="h6">Confirmados</Typography>
               <Typography variant="h4">{data.confirmados}</Typography>
@@ -109,7 +87,7 @@ class SinteseComponent extends React.Component {
         </Grid>
         <Grid lg={4} xs={12} item>
           <Card
-            style={{ background: "#2568B0", height: "100%", color: "white" }}
+            style={{ background: '#2568B0', height: '100%', color: 'white' }}
           >
             <CardContent>
               <Typography variant="h6">Recuperados</Typography>
@@ -124,7 +102,7 @@ class SinteseComponent extends React.Component {
           </Card>
         </Grid>
         <Grid lg={4} xs={12} item>
-          <Card style={{ height: "100%" }}>
+          <Card style={{ height: '100%' }}>
             <CardContent>
               <Typography variant="h6">Óbitos</Typography>
               <Typography variant="h4">{data.obitos}</Typography>
@@ -178,92 +156,35 @@ class SinteseComponent extends React.Component {
   }
 }
 
-class VizualizacaoComponent extends React.Component {
-  render() {
-    return (
-      <Box display="flex" flexDirection="column" spacing={2}>
-        <Box item>
-          <Paper
-            variant="outlined"
-            style={{ background: "#195599", color: "white" }}
-          >
-            <Box p={2}>
-              <Typography variant="h6">
-                Casos novos de covid por data de notificação
-              </Typography>
-            </Box>
-          </Paper>
-        </Box>
-        <Box mt={1} item>
-          <Paper>
-            <Box p={2}>
-              <ResponsiveContainer width="100%" height={400}>
-                <LineChart
-                  data={this.props.data}
-                  margin={{ top: 5, right: 5, left: -30, bottom: 0 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="data" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="confirmados" stroke="#195599" />
-                </LineChart>
-              </ResponsiveContainer>
-            </Box>
-          </Paper>
-        </Box>
-      </Box>
-    );
-  }
-}
-
 class CovidPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { data: [] };
+  state = { data: [] };
+  componentDidMount() {
     axios
       .get(
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vQK8qvNBCji9SrCkHVBKCHQVQ6s9DK1GlBSIaQDnrW5Cqp0omkEO-5Ke8IPiuPzamwjwK9ACY6y2KUl/pub?gid=0&single=true&output=tsv"
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQK8qvNBCji9SrCkHVBKCHQVQ6s9DK1GlBSIaQDnrW5Cqp0omkEO-5Ke8IPiuPzamwjwK9ACY6y2KUl/pub?gid=0&single=true&output=tsv'
       )
       .then((res) => {
-        this.setState({ data: this.tsvJSON(res.data) });
+        this.setState({ data: tsvJSON(res?.data) });
       });
-  }
-  zeroPad = (num, places) => String(num).padStart(places, '0')
-  tsvJSON(tsv) {
-    var lines = tsv.split("\n");
-    var result = [];
-    var headers = lines[0].split("\t");
-    for (var i = 1; i < lines.length; i++) {
-      var obj = {};
-      var currentline = lines[i].split("\t");
-      for (var j = 0; j < headers.length; j++) {
-        if (headers[j] !== "data") {
-          obj[headers[j]] = parseInt(currentline[j]);
-        } else {
-          let parts = currentline[j].split("-");
-          let d = new Date(parts[0], parts[1], parts[2]);
-          obj[headers[j]] = this.zeroPad(d.getDate(), 2) + "/" + this.zeroPad(d.getMonth(), 2);
-        }
-      }
-      result.push(obj);
-    }
-    return result; //JavaScript object
-    //return JSON.stringify(result); //JSON
   }
 
   render() {
     return (
       <Container maxWidth="lg">
         <Box display="flex" flexDirection="column" mt={4}>
-          <Box item>
+          <Box>
             <Typography variant="h4">Painel Covid Dário Meira</Typography>
           </Box>
-          <Box mt={2} item>
+          <Box mt={2}>
             <SinteseComponent data={this.state.data} />
           </Box>
-          <Box my={4} item>
-            <VizualizacaoComponent data={this.state.data} />
+          <Box my={4}>
+            {this.state?.data && (
+              <Chart
+                data={this.state.data}
+                title="Casos novos de covid por data de notificação"
+              />
+            )}
           </Box>
         </Box>
       </Container>

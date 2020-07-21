@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -39,7 +39,7 @@ const theme = createMuiTheme({
 });
 
 ReactDOM.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <HashRouter>
     <React.StrictMode>
       <ThemeProvider theme={theme}>
         <Route path="/covid">
@@ -53,7 +53,7 @@ ReactDOM.render(
         </Route>
       </ThemeProvider>
     </React.StrictMode>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
 

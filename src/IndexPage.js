@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import { Grid, Container, Box, Typography } from '@material-ui/core';
+import { Link as RRLink } from "react-router-dom";
+import { Grid, Container, Box, Typography, Link } from '@material-ui/core';
 import VideoAbertura from './abertura.mp4';
 import BannerCovid from './covid.gif';
 
@@ -49,7 +48,7 @@ export default function IndexPage() {
         <Grid xs={12} sm={12} item>
           <Box p={2}>
             <Typography align="center" variant="h5" color="primary">
-              <Link href="/#/about" color="secondary">
+              <Link component={RRLink} to="/about" color="secondary">
                 Quem somos
               </Link>
             </Typography>

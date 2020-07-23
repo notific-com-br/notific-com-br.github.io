@@ -1,19 +1,13 @@
 import React from 'react';
 import { Container, Grid, Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import { UserCard } from './components/user-card/user-card.component';
 
-const useStyles = makeStyles((theme) => ({
-  grid: {},
-}));
 
 export default function AboutUsPage() {
-  const classes = useStyles();
   return (
     <Container maxWidth="lg">
       <Box mt={4}>
         <Grid
-          className={classes.grid}
           spacing={2}
           direction="row"
           justify="center"

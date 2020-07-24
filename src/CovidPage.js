@@ -14,11 +14,14 @@ import {
   TableCell,
   TableBody,
   TableContainer,
+  Link,
+  Breadcrumbs,
+
 } from '@material-ui/core';
 import axios from 'axios';
-import { tsvJSON } from './helpers/tsv-to-json';
-import { Header } from './components/header/header.component';
-import { Chart } from './components/chart/chart.component';
+import {tsvJSON} from './helpers/tsv-to-json';
+import {Header} from './components/header/header.component';
+import {Chart} from './components/chart/chart.component';
 
 class SinteseComponent extends React.Component {
   render() {
@@ -78,7 +81,7 @@ class SinteseComponent extends React.Component {
         spacing={1}
       >
         <Grid lg={4} xs={12} item>
-          <Card style={{ background: '#FFCC29', height: '100%' }}>
+          <Card style={{background: '#FFCC29', height: '100%'}}>
             <CardContent>
               <Typography variant="h6">Confirmados</Typography>
               <Typography variant="h4">{data.confirmados}</Typography>
@@ -93,7 +96,7 @@ class SinteseComponent extends React.Component {
         </Grid>
         <Grid lg={4} xs={12} item>
           <Card
-            style={{ background: '#2568B0', height: '100%', color: 'white' }}
+            style={{background: '#2568B0', height: '100%', color: 'white'}}
           >
             <CardContent>
               <Typography variant="h6">Recuperados</Typography>
@@ -108,7 +111,7 @@ class SinteseComponent extends React.Component {
           </Card>
         </Grid>
         <Grid lg={4} xs={12} item>
-          <Card style={{ height: '100%' }}>
+          <Card style={{height: '100%'}}>
             <CardContent>
               <Typography variant="h6">Óbitos</Typography>
               <Typography variant="h4">{data.obitos}</Typography>
@@ -165,14 +168,14 @@ class SinteseComponent extends React.Component {
 }
 
 class CovidPage extends React.Component {
-  state = { data: [] };
+  state = {data: []};
   componentDidMount() {
     axios
       .get(
         'https://docs.google.com/spreadsheets/d/e/2PACX-1vQK8qvNBCji9SrCkHVBKCHQVQ6s9DK1GlBSIaQDnrW5Cqp0omkEO-5Ke8IPiuPzamwjwK9ACY6y2KUl/pub?gid=0&single=true&output=tsv'
       )
       .then((res) => {
-        this.setState({ data: tsvJSON(res?.data) });
+        this.setState({data: tsvJSON(res?.data)});
       });
   }
 
@@ -184,7 +187,7 @@ class CovidPage extends React.Component {
           display="flex"
           flexDirection="column"
           mt={4}
-          style={{ marginTop: 10 }}
+          style={{marginTop: 10}}
         >
           <Box
             display="flex"
@@ -194,12 +197,20 @@ class CovidPage extends React.Component {
           >
             <Typography
               variant="body1"
-              style={{ fontSize: '1rem', color: 'rgba(0, 0, 0, 0.54)' }}
+              style={{fontSize: '1rem', color: 'rgba(0, 0, 0, 0.54)'}}
             >
               Última atualização:{' '}
               {this.state.data[this.state.data.length - 1]?.data} às{' '}
               {this.state.data[this.state.data.length - 1]?.hora}
             </Typography>
+          </Box>
+          <Box>
+            <Breadcrumbs aria-label="breadcrumb">
+              <Link color="inherit" href="/">
+                Inicio
+              </Link>
+              <Typography color="textPrimary">Cortal Covid</Typography>
+            </Breadcrumbs>
           </Box>
           <Box mt={2}>
             <SinteseComponent data={this.state.data} />

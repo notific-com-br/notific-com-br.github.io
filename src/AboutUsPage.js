@@ -1,12 +1,20 @@
 import React from 'react';
-import { Container, Grid, Box } from '@material-ui/core';
-import { UserCard } from './components/user-card/user-card.component';
+import {Container, Grid, Box, Link, Typography, Breadcrumbs} from '@material-ui/core';
+import {UserCard} from './components/user-card/user-card.component';
 
 
 export default function AboutUsPage() {
   return (
     <Container maxWidth="lg">
       <Box mt={4}>
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link color="inherit" href="/">
+            Inicio
+          </Link>
+          <Typography color="textPrimary">Sobre nós </Typography>
+        </Breadcrumbs>
+      </Box>
+      <Box mt={2}>
         <Grid
           spacing={2}
           direction="row"

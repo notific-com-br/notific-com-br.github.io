@@ -118,7 +118,7 @@ class SinteseComponent extends React.Component {
         <Grid lg={12} xs={12} item>
           <TableContainer component={Paper}>
             <Table aria-label="detalhes por distrito">
-              <caption>Fonte: Prefeitura municipal de Dario Meira</caption>
+              <caption>Fonte: Secretaria Municipal de Saúde - Dário Meira/BA.</caption>
               <TableHead>
                 <TableRow>
                   <TableCell>Local</TableCell>
@@ -172,8 +172,17 @@ class CovidPage extends React.Component {
     return (
       <Container maxWidth="lg">
         <Box display="flex" flexDirection="column" mt={4}>
-          <Box>
-            <Typography variant="h4">Painel Covid Dário Meira</Typography>
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <Box flexGrow={1}>
+              <Typography variant="h4">Painel Covid Dário Meira</Typography>
+            </Box>
+            <Box>
+              <Typography variant="body2">
+                Última atualização: 
+                {this.state.data[this.state.data.length -1]?.data}/2020
+                {' '} as {this.state.data[this.state.data.length -1]?.hora}
+              </Typography>
+            </Box>
           </Box>
           <Box mt={2}>
             <SinteseComponent data={this.state.data} />

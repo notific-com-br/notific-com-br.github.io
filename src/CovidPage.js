@@ -14,6 +14,7 @@ import {
   TableCell,
   TableBody,
   TableContainer,
+  Select,
 } from '@material-ui/core';
 import axios from 'axios';
 import { tsvJSON } from './helpers/tsv-to-json';

@@ -209,7 +209,7 @@ class CovidPage extends React.Component {
               <Link color="inherit" href="/">
                 Inicio
               </Link>
-              <Typography color="textPrimary">Cortal Covid</Typography>
+              <Typography color="textPrimary">Portal Covid</Typography>
             </Breadcrumbs>
           </Box>
           <Box mt={2}>

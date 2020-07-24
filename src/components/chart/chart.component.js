@@ -1,6 +1,6 @@
-import React from 'react';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import React, {useState} from 'react';
+import {Box, Paper, Typography, Select, MenuItem} from '@material-ui/core';
+
 import {
   AreaChart,
   XAxis,
@@ -11,26 +11,42 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { useStyles } from './chart.component.style';
+import {useStyles} from './chart.component.style';
 
-export function Chart({ data, title }) {
+export function Chart({data, title}) {
+  const [tipoDeGrafico, setTipoDeGrafico] = useState('confirmados')
   const classes = useStyles();
   return (
     <Paper
-      variant="elevation"
       className={classes.paper}
+      variant="elevation"
       data-testid="paper-chart"
     >
       {title && (
-        <Typography variant="h6" className={classes.title}>
-          {title}
-        </Typography>
+        <Box display='flex' justifyContent='left' alignItems='center' flexWrap='wrap'>
+          <Box flexGrow={1} mb={2}>
+            <Typography variant="h6">
+              {title}
+            </Typography>
+          </Box>
+          <Box item mb={2}>
+            <Select
+              value={tipoDeGrafico}
+              onChange={(v) => setTipoDeGrafico(v.target.value)}
+              variant='outlined'
+            >
+              <MenuItem value='confirmados'>Confirmados</MenuItem>
+              <MenuItem value='recuperados'>Recuperados</MenuItem>
+              <MenuItem value='obitos'>Óbitos</MenuItem>
+            </Select>
+          </Box>
+        </Box>
       )}
       {data && (
         <ResponsiveContainer width="100%" height={400}>
           <AreaChart
             data={data}
-            margin={{ top: 5, right: 5, left: -30, bottom: 0 }}
+            margin={{top: 5, right: 3, left: -30, bottom: 0}}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="data" />
@@ -39,27 +55,8 @@ export function Chart({ data, title }) {
             <Legend />
             <Area
               type="monotone"
-              dataKey="confirmados"
+              dataKey={tipoDeGrafico}
               stroke="#195599"
-              fill="#195599"
-              fillOpacity="1"
-              dot={false}
-            />
-            <Area
-              type="monotone"
-              dataKey="recuperados"
-              stroke="#ffcc29"
-              fill="#ffcc29"
-              fillOpacity="1"
-              dot={false}
-            />
-
-            <Area
-              type="monotone"
-              dataKey="obitos"
-              stroke="#000"
-              fill="#000"
-              fillOpacity="1"
               dot={false}
             />
           </AreaChart>

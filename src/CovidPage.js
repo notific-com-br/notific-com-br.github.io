@@ -139,7 +139,7 @@ class SinteseComponent extends React.Component {
                   <TableCell>{data.obitos_acaraci}</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>Planalto Iris</TableCell>
+                  <TableCell>Planalto Íris</TableCell>
                   <TableCell>{data.casos_p_iris}</TableCell>
                   <TableCell>{data.obitos_p_iris}</TableCell>
                 </TableRow>
@@ -178,12 +178,12 @@ class CovidPage extends React.Component {
     return (
       <Container maxWidth="lg">
         <Box display="flex" flexDirection="column" mt={4}>
-          <Box display="flex" justifyContent="center" alignItems="center">
+          <Box display="flex" justifyContent="left" alignItems="center" flexWrap='wrap'>
             <Box flexGrow={1}>
               <Typography variant="h4">Painel Covid Dário Meira</Typography>
             </Box>
             <Box>
-              <Typography variant="body2">
+              <Typography variant="caption text">
                 Última atualização:{' '} 
                 {this.state.data[this.state.data.length-1]?.data } às {' '}
                 {this.state.data[this.state.data.length-1]?.hora }

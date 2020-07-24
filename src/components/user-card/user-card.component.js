@@ -19,7 +19,7 @@ export function UserCard({ name, image, profiles, about }) {
   const classes = useStyles();
   return (
     <Grid xs={12} lg={4} item>
-      <Card>
+      <Card className={classes.card} >
         <CardMedia className={classes.cardImage} image={image} title={name} />
         <CardActions>
           {profiles?.facebook && (

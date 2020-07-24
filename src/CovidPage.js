@@ -39,6 +39,8 @@ class SinteseComponent extends React.Component {
       casos_p_novo: 0,
       casos_sede: 0,
       casos_p_iris: 0,
+      data: '',
+      hora: '',
     };
     if (this.props.data.length) {
       let lastRow = this.props.data[this.props.data.length - 1];
@@ -62,6 +64,9 @@ class SinteseComponent extends React.Component {
       data.obitos_p_novo = lastRow.obitos_p_novo;
       data.obitos_acaraci = lastRow.obitos_acaraci;
       data.obitos_sede = lastRow.obitos_sede;
+      //
+      data.data = lastRow.data;
+      data.hora = lastRow.hora;
     }
     return (
       <Grid
@@ -178,9 +183,10 @@ class CovidPage extends React.Component {
             </Box>
             <Box>
               <Typography variant="body2">
-                Última atualização: 
-                {this.state.data[this.state.data.length -1]?.data}/2020
-                {' '} as {this.state.data[this.state.data.length -1]?.hora}
+                Última atualização:{' '} 
+                {this.state.data[this.state.data.length-1]?.data } às {' '}
+                {this.state.data[this.state.data.length-1]?.hora }
+                
               </Typography>
             </Box>
           </Box>

@@ -1,12 +1,14 @@
 import React from 'react';
 import {Container, Grid, Box, Link, Typography, Breadcrumbs} from '@material-ui/core';
 import {UserCard} from './components/user-card/user-card.component';
+import {Header} from './components/header/header.component';
 
 
 export default function AboutUsPage() {
   return (
     <Container maxWidth="lg">
-      <Box mt={4}>
+      <Header title="PORTAL COVID-19" />
+      <Box my={2}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link color="inherit" href="/">
             Inicio
@@ -14,7 +16,7 @@ export default function AboutUsPage() {
           <Typography color="textPrimary">Sobre nós </Typography>
         </Breadcrumbs>
       </Box>
-      <Box mt={2}>
+      <Box>
         <Grid
           spacing={2}
           direction="row"

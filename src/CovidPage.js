@@ -14,10 +14,10 @@ import {
   TableCell,
   TableBody,
   TableContainer,
-  Select,
 } from '@material-ui/core';
 import axios from 'axios';
 import { tsvJSON } from './helpers/tsv-to-json';
+import { Header } from './components/header/header.component';
 import { Chart } from './components/chart/chart.component';
 
 class SinteseComponent extends React.Component {
@@ -124,7 +124,9 @@ class SinteseComponent extends React.Component {
         <Grid lg={12} xs={12} item>
           <TableContainer component={Paper}>
             <Table aria-label="detalhes por distrito">
-              <caption>Fonte: Secretaria Municipal de Saúde - Dário Meira/BA.</caption>
+              <caption>
+                Fonte: Secretaria Municipal de Saúde - Dário Meira/BA.
+              </caption>
               <TableHead>
                 <TableRow>
                   <TableCell>Local</TableCell>
@@ -177,19 +179,27 @@ class CovidPage extends React.Component {
   render() {
     return (
       <Container maxWidth="lg">
-        <Box display="flex" flexDirection="column" mt={4}>
-          <Box display="flex" justifyContent="left" alignItems="center" flexWrap='wrap'>
-            <Box flexGrow={1}>
-              <Typography variant="h4">Painel Covid Dário Meira</Typography>
-            </Box>
-            <Box>
-              <Typography variant="caption text">
-                Última atualização:{' '} 
-                {this.state.data[this.state.data.length-1]?.data } às {' '}
-                {this.state.data[this.state.data.length-1]?.hora }
-                
-              </Typography>
-            </Box>
+        <Header title="PORTAL COVID-19" />
+        <Box
+          display="flex"
+          flexDirection="column"
+          mt={4}
+          style={{ marginTop: 10 }}
+        >
+          <Box
+            display="flex"
+            justifyContent="flex-end"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <Typography
+              variant="body1"
+              style={{ fontSize: '1rem', color: 'rgba(0, 0, 0, 0.54)' }}
+            >
+              Última atualização:{' '}
+              {this.state.data[this.state.data.length - 1]?.data} às{' '}
+              {this.state.data[this.state.data.length - 1]?.hora}
+            </Typography>
           </Box>
           <Box mt={2}>
             <SinteseComponent data={this.state.data} />
@@ -198,7 +208,7 @@ class CovidPage extends React.Component {
             {this.state?.data && (
               <Chart
                 data={this.state.data}
-                title="Casos novos de covid por data de notificação"
+                title="Casos de covid por data de notificação"
               />
             )}
           </Box>

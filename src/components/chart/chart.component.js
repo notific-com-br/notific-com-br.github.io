@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Box, Paper, Typography, Select, MenuItem} from '@material-ui/core';
+import React, { useState } from 'react';
+import { Box, Paper, Typography, Select, MenuItem } from '@material-ui/core';
 
 import {
   AreaChart,
@@ -11,10 +11,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import {useStyles} from './chart.component.style';
+import { useStyles } from './chart.component.style';
 
-export function Chart({data, title}) {
-  const [tipoDeGrafico, setTipoDeGrafico] = useState('confirmados')
+export function Chart({ data, title }) {
+  const [tipoDeGrafico, setTipoDeGrafico] = useState('confirmados');
   const classes = useStyles();
   return (
     <Paper
@@ -23,21 +23,24 @@ export function Chart({data, title}) {
       data-testid="paper-chart"
     >
       {title && (
-        <Box display='flex' justifyContent='left' alignItems='center' flexWrap='wrap'>
+        <Box
+          display="flex"
+          justifyContent="left"
+          alignItems="center"
+          flexWrap="wrap"
+        >
           <Box flexGrow={1} mb={2}>
-            <Typography variant="h6">
-              {title}
-            </Typography>
+            <Typography variant="h6">{title}</Typography>
           </Box>
-          <Box item mb={2}>
+          <Box mb={2}>
             <Select
               value={tipoDeGrafico}
               onChange={(v) => setTipoDeGrafico(v.target.value)}
-              variant='outlined'
+              variant="outlined"
             >
-              <MenuItem value='confirmados'>Confirmados</MenuItem>
-              <MenuItem value='recuperados'>Recuperados</MenuItem>
-              <MenuItem value='obitos'>Óbitos</MenuItem>
+              <MenuItem value="confirmados">Confirmados</MenuItem>
+              <MenuItem value="recuperados">Recuperados</MenuItem>
+              <MenuItem value="obitos">Óbitos</MenuItem>
             </Select>
           </Box>
         </Box>
@@ -46,7 +49,7 @@ export function Chart({data, title}) {
         <ResponsiveContainer width="100%" height={400}>
           <AreaChart
             data={data}
-            margin={{top: 5, right: 3, left: -30, bottom: 0}}
+            margin={{ top: 5, right: 3, left: -30, bottom: 0 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="data" />

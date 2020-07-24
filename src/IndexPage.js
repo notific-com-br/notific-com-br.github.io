@@ -32,7 +32,7 @@ export default function IndexPage() {
         container
       >
         <Grid xs={12} sm={12} item>
-          <Link to="/covid">
+          <Link component={RRLink} to="/covid">
             <img
               width="100%"
               alt="Banner com link para informacoes sobre covid19"
@@ -48,7 +48,7 @@ export default function IndexPage() {
         <Grid xs={12} sm={12} item>
           <Box p={2}>
             <Typography align="center" variant="h5" color="primary">
-              <Link component={RRLink} to="/about" color="secondary">
+              <Link component={RRLink} to="/about">
                 Quem somos
               </Link>
             </Typography>

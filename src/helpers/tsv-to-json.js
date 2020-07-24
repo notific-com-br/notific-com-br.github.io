@@ -8,7 +8,9 @@ export function tsvJSON(tsv) {
     var obj = {};
     var currentline = lines[i].split('\t');
     for (var j = 0; j < headers.length; j++) {
-      if (headers[j] !== 'data') {
+      if (headers[j] === 'hora') {
+        obj[headers[j]] = currentline[j];
+      } else if (headers[j] !== 'data') {
         obj[headers[j]] = parseInt(currentline[j]);
       } else {
         let parts = currentline[j].split('-');

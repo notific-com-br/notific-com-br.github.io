@@ -7,13 +7,13 @@ import {Header} from './components/header/header.component';
 export default function AboutUsPage() {
   return (
     <Container maxWidth="lg">
-      <Header title="PORTAL COVID-19" />
+      <Header title="SOBRE NÓS" />
       <Box my={2}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link color="inherit" href="/">
             Inicio
           </Link>
-          <Typography color="textPrimary">Sobre nós </Typography>
+          <Typography color="textPrimary">Sobre nós</Typography>
         </Breadcrumbs>
       </Box>
       <Box>

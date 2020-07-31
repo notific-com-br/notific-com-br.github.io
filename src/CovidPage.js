@@ -172,7 +172,7 @@ class CovidPage extends React.Component {
   componentDidMount() {
     axios
       .get(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQK8qvNBCji9SrCkHVBKCHQVQ6s9DK1GlBSIaQDnrW5Cqp0omkEO-5Ke8IPiuPzamwjwK9ACY6y2KUl/pub?gid=0&single=true&output=tsv'
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUHpid2gd9ufyeEnZzyrVvHr0BeYqwVyHKUugiX0D2dTNWjKIKUXCO4Z6_Q8q0JGyiguHvE4XE36uW/pub?gid=0&single=true&output=tsv'
       )
       .then((res) => {
         this.setState({data: tsvJSON(res?.data)});

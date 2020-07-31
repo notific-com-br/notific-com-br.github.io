@@ -204,7 +204,7 @@ class CovidPage extends React.Component {
               {this.state.data[this.state.data.length - 1]?.hora}
             </Typography>
           </Box>
-          <Box>
+          <Box mt={2}>
             <Breadcrumb sitePath='Portal Covid' />
           </Box>
           <Box mt={2}>

@@ -1,7 +1,8 @@
 import React from 'react';
-import {Container, Grid, Box, Link, Typography, Breadcrumbs} from '@material-ui/core';
+import {Container, Grid, Box, Link, Typography} from '@material-ui/core';
 import {UserCard} from './components/user-card/user-card.component';
 import {Header} from './components/header/header.component';
+import {Breadcrumb} from './components/breadcrumb/breadcrumb.component';
 
 
 export default function AboutUsPage() {
@@ -9,12 +10,7 @@ export default function AboutUsPage() {
     <Container maxWidth="lg">
       <Header title="SOBRE NÓS" />
       <Box my={2}>
-        <Breadcrumbs aria-label="breadcrumb">
-          <Link color="inherit" href="/">
-            Inicio
-          </Link>
-          <Typography color="textPrimary">Sobre nós</Typography>
-        </Breadcrumbs>
+        <Breadcrumb sitePath='Sobre nós' />
       </Box>
       <Box>
         <Grid

@@ -15,13 +15,13 @@ import {
   TableBody,
   TableContainer,
   Link,
-  Breadcrumbs,
 
 } from '@material-ui/core';
 import axios from 'axios';
 import {tsvJSON} from './helpers/tsv-to-json';
 import {Header} from './components/header/header.component';
 import {Chart} from './components/chart/chart.component';
+import {Breadcrumb} from './components/breadcrumb/breadcrumb.component';
 
 class SinteseComponent extends React.Component {
   render() {
@@ -205,12 +205,7 @@ class CovidPage extends React.Component {
             </Typography>
           </Box>
           <Box>
-            <Breadcrumbs aria-label="breadcrumb">
-              <Link color="inherit" href="/">
-                Inicio
-              </Link>
-              <Typography color="textPrimary">Portal Covid</Typography>
-            </Breadcrumbs>
+            <Breadcrumb sitePath='Portal Covid' />
           </Box>
           <Box mt={2}>
             <SinteseComponent data={this.state.data} />

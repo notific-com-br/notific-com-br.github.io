@@ -21,4 +21,11 @@ export const useStyles = makeStyles((theme) => ({
   logo: {
     marginRight: 'auto',
   },
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      padding: 0,
+    },
+  },
 }));

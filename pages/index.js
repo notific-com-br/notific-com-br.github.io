@@ -2,9 +2,8 @@ import Head from 'next/head';
 import Container from '../components/container';
 import MoreStories from '../components/more-stories';
 import HeroPost from '../components/hero-post';
-import Layout from '../components/layout';
+import { Layout } from '../src/templates/layout';
 import { getAllPostsForHome } from '../lib/api';
-import { Header, Footer } from '../src/organisms';
 import { Jumbotron } from '../src/atoms';
 import { Link } from '@material-ui/core';
 
@@ -20,7 +19,7 @@ export default function Index({ allPosts: { edges }, preview }) {
           muito mais...
         </title>
       </Head>
-      <Header />
+      
       <Link href="/covid">
         <Jumbotron
           path="/images/banner-covid.gif"
@@ -40,7 +39,7 @@ export default function Index({ allPosts: { edges }, preview }) {
         )}
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
-      <Footer />
+      
     </Layout>
   );
 }

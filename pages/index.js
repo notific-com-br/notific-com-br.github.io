@@ -4,7 +4,9 @@ import MoreStories from '../components/more-stories';
 import HeroPost from '../components/hero-post';
 import Layout from '../components/layout';
 import { getAllPostsForHome } from '../lib/api';
-import { Header } from '../src/organisms';
+import { Header, Footer } from '../src/organisms';
+import { Jumbotron } from '../src/atoms';
+import { Link } from '@material-ui/core';
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node;
@@ -19,6 +21,12 @@ export default function Index({ allPosts: { edges }, preview }) {
         </title>
       </Head>
       <Header />
+      <Link href="/covid">
+        <Jumbotron
+          path="/images/banner-covid.gif"
+          altDesc=" Banner sobre as informações do Covid-19 em Dário Meira"
+        />
+      </Link>
       <Container>
         {heroPost && (
           <HeroPost
@@ -32,6 +40,7 @@ export default function Index({ allPosts: { edges }, preview }) {
         )}
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
+      <Footer />
     </Layout>
   );
 }

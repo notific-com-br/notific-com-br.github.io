@@ -4,43 +4,90 @@ import {useStyles} from './grid-posts.styles';
 import {CardDefault, CardSecondary} from '../../molecules/';
 import { Grid } from '@material-ui/core'
 
-// TODO: describe the data
+const data = 
+  [
+    {
+      'title': 'Estudo: PIB deve trazer no 2º tri recessão recorde',
+      'text': 'none',
+      'photo': 'none',
+      'link': 'none',
+    },
+    {
+      'title': 'PM acha 2º corpo de sem-teto em meio a frio de SP',
+      'text': 'none',
+      'photo': 'none',
+      'link': 'none',
+    },
+    {
+      'title': 'Apple é processada por falha em MacBooks e pode ter que reembolsar os clientes',
+      'text': 'Usuários querem ressarcimento por custos para corrigir falha de projeto que causou problema de tela em modelos fabricados em 2016 e 2017',
+      'photo': 'none',
+      'link': 'none',
+    },
+    {
+      'title': 'Vídeo mostra momento da queda de casa em Mauá, SP',
+      'text': 'none',
+      'photo': 'none',
+      'link': 'none',
+    },
+    {
+      'title': 'Apple é processada por falha em MacBooks e pode ter que reembolsar os clientes',
+      'text': 'Usuários querem ressarcimento por custos para corrigir falha de projeto que causou problema de tela em modelos fabricados em 2016 e 2017',
+      'photo': 'none',
+      'link': 'none',
+    },
+    {
+      'title': 'STF determina fim da superlotação em unidades socioeducativas em todo o país',
+      'text': 'none',
+      'photo': 'none',
+      'link': 'none',
+    },
+    {
+      'title': 'Apple é processada por falha em MacBooks e pode ter que reembolsar os clientes',
+      'text': 'Usuários querem ressarcimento por custos para corrigir falha de projeto que causou problema de tela em modelos fabricados em 2016 e 2017',
+      'photo': 'none',
+      'link': 'none',
+    },
+    {
+      'title': 'Apple é processada por falha em MacBooks e pode ter que reembolsar os clientes',
+      'text': 'Usuários querem ressarcimento por custos para corrigir falha de projeto que causou problema de tela em modelos fabricados em 2016 e 2017',
+      'photo': 'none',
+      'link': 'none',
+    },
+  ]
+
+/*
+[
+  {
+    'title':
+    'text':
+    'photo':
+    'link':
+  },
+]
+The component should be able to define the type of the grid to use
+*/
+
+// TODO: write a function getCard
+// The function should take carer of calculating 
+// how many big card per row we could/should have
 
 export function GridPosts() {
   const classes = useStyles();
+  
+  let cards = data.map( (v) => 
+    (
+      <Grid item xs={3}>
+        <CardDefault
+          title={v.title}
+        />
+      </Grid>
+    )
+  )
+
   return (
     <Grid container alignItems="stretch" spacing={3}>
-      <Grid item xs={6}>
-        <CardSecondary
-          title='Estudo: PIB deve trazer no 2º tri recessão recorde'
-          text='Esperados para o próximo dia 1º de setembro, os dados do Produto Interno Bruto (PIB) brasileiro deverão mostrar que o tombo da economia com a pandemia [...]'
-        />
-      </Grid>
-      <Grid item xs={3}>
-        <CardDefault
-          title='SP: aula online é invadida com foto nazista'
-        />
-      </Grid>
-      <Grid item xs={3}>
-        <CardDefault
-          title='PM acha 2º corpo de sem-teto em meio a frio de SP'
-        />
-      </Grid>
-      <Grid item xs={3}>
-        <CardDefault
-          title='Flávio vai ao MPF contra inquérito eleitoral'
-        />
-      </Grid>
-      <Grid item xs={6}>
-        <CardSecondary
-          title='Vídeo mostra momento da queda de casa em Mauá, SP'
-          text='Segundo o Corpo de Bombeiros, ninguém ficou ferido. Prefeitura da cidade disse que vai "apurar com rigor" o motivo do desabamento.'
-        />
-      </Grid>
-      <Grid item xs={3}>
-        <CardDefault
-          title='2º quarto - Rockets 41 x 37 Thunder'
-        />
-      </Grid>
-    </Grid>)
+      {cards}
+    </Grid>
+  )
 }

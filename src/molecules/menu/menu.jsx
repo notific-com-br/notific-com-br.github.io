@@ -7,7 +7,9 @@ export const PrimaryMenu = () => {
   return (
     <ul className={classes.root}>
       <li className={classes.item}>
-        <Link href="/blog">blog</Link>
+        <Link className={classes.link} href="/blog">
+          blog
+        </Link>
       </li>
       <li className={classes.item}>
         <Link className={classes.link} href="/sobre-nos">
@@ -19,9 +21,21 @@ export const PrimaryMenu = () => {
           portal covid
         </Link>
       </li>
-      <li className={classes.item}>podcast</li>
-      <li className={classes.item}>vídeos</li>
-      <li className={classes.item}>contato</li>
+      <li className={classes.item}>
+        <Link className={classes.link} href="/covid">
+          podcast
+        </Link>
+      </li>
+      <li className={classes.item}>
+        <Link className={classes.link} href="/covid">
+          vídeos
+        </Link>
+      </li>
+      <li className={classes.item}>
+        <Link className={classes.link} href="/covid">
+          contato
+        </Link>
+      </li>
     </ul>
   );
 };

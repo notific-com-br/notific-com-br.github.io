@@ -13,9 +13,10 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     textTransform: 'uppercase',
     padding: '0 10px',
+    fontWeight: theme.typography.fontWeightBold,
   },
   link: {
-    color: 'white',
+    color: theme.palette.primary.main,
     '&:hover': {
       textDecoration: 'none',
     },

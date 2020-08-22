@@ -4,12 +4,21 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  toolbar: {
-    alignItems: 'center',
+  toolBar: {
+    minHeight: 108,
     paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(1),
+
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.primary.main,
+    [theme.breakpoints.down('sm')]: {
+      minHeight: 'auto',
+    },
   },
-  linkTitle: {
-    textDecoration: 'none',
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  logo: {
+    marginRight: 'auto',
   },
 }));

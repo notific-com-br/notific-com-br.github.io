@@ -3,7 +3,7 @@ import ErrorPage from 'next/error';
 import Container from '../../components/container';
 import PostBody from '../../components/post-body';
 import MoreStories from '../../components/more-stories';
-import Header from '../../components/header';
+import { Header } from '../../src/organisms';
 import PostHeader from '../../components/post-header';
 import SectionSeparator from '../../components/section-separator';
 import Layout from '../../components/layout';
@@ -30,7 +30,10 @@ export default function Post({ post, posts, preview }) {
           <>
             <article>
               <Head>
-                <title>{post.title}</title>
+                <title>
+                  {post.title} | Notific.com.br: Informação, entretenimento,
+                  notícias, classificados e muito mais...
+                </title>
                 <meta
                   property="og:image"
                   content={post.featuredImage?.node?.sourceUrl}
@@ -59,13 +62,17 @@ export default function Post({ post, posts, preview }) {
 }
 
 export async function getStaticProps({ params, preview = false, previewData }) {
-  const data = await getPostAndMorePosts(params.slug, preview, previewData);
+  const { post, posts } = await getPostAndMorePosts(
+    params.slug,
+    preview,
+    previewData
+  );
 
   return {
     props: {
       preview,
-      post: data.post,
-      posts: data.posts,
+      post,
+      posts,
     },
   };
 }

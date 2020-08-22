@@ -2,6 +2,10 @@ import React from 'react';
 
 import {useStyles} from './card-secondary.styles';
 
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+
 import {
   Card,
   CardActionArea,
@@ -17,7 +21,7 @@ export const CardSecondary = (props) => {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea className={classes.action}>
         <Box display='flex' flexDirection='row'>
           <Box>
             <CardMedia
@@ -38,11 +42,14 @@ export const CardSecondary = (props) => {
       </CardActionArea>
       <CardActions>
         <Button size='small' color='primary'>
-          Share
-            </Button>
+          <WhatsAppIcon />
+        </Button>
         <Button size='small' color='primary'>
-          Learn More
-            </Button>
+          <FacebookIcon />
+        </Button>
+        <Button size='small' color='primary'>
+          <InstagramIcon/>
+        </Button>
       </CardActions>
 
     </Card>

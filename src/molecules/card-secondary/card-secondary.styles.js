@@ -2,6 +2,9 @@ import { makeStyles } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 300,
+    height: '100%'
+  },
+  action: {
+    height: '85%'
   },
 }));

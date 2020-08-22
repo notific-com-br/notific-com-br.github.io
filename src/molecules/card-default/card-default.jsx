@@ -2,6 +2,10 @@ import React from 'react';
 
 import {useStyles} from './card-default.styles';
 
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+
 import {
   Card,
   CardActionArea,
@@ -16,7 +20,7 @@ export const CardDefault = (props) => {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea className={classes.action}>
         <CardMedia
           component='img'
           alt='Imagem de um post'
@@ -26,15 +30,17 @@ export const CardDefault = (props) => {
         />
         <CardContent>
           <Typography gutterBottom variant='h5'>{props.title}</Typography>
-          <Typography gutterBottom variant='body2' color='textSecondary' component='p'>{props.text}</Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size='small' color='primary'>
-          Share
+          <WhatsAppIcon />
         </Button>
         <Button size='small' color='primary'>
-          Learn More
+          <FacebookIcon />
+        </Button>
+        <Button size='small' color='primary'>
+          <InstagramIcon/>
         </Button>
       </CardActions>
           

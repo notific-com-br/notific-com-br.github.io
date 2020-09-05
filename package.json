@@ -1,6 +1,6 @@
 {
-  "name": "cms-wordpress",
-  "version": "1.0.0",
+  "name": "Notific",
+  "version": "0.0.1",
   "scripts": {
     "dev": "next",
     "build": "next build",

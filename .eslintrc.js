@@ -19,9 +19,9 @@ module.exports = {
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 0,
-    'space-before-function-paren': 'off'
-
+    'react/prop-types': 'off',
+    'space-before-function-paren': 'off',
+    'comma-dangle': 'off'
   },
   globals: {
     React: 'writable'

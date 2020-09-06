@@ -1,15 +1,23 @@
-import Head from 'next/head';
-import Container from '../components/container';
-import MoreStories from '../components/more-stories';
-import HeroPost from '../components/hero-post';
-import { Layout } from '../src/templates/layout';
-import { getAllPostsForHome } from '../lib/api';
-import { Jumbotron } from '../src/atoms';
-import { Link } from '@material-ui/core';
+import Head from 'next/head'
+
+import { Link, Box, Container } from '@material-ui/core'
+
+// import MoreStories from '../components/more-stories'
+// import HeroPost from '../components/hero-post'
+
+import { Layout } from '../src/templates/layout'
+import { GridPosts } from '../src/organisms'
+import { getAllPostsForHome } from '../lib/api'
+
+import { Jumbotron } from '../src/atoms'
 
 export default function Index({ allPosts: { edges }, preview }) {
-  const heroPost = edges[0]?.node;
-  const morePosts = edges.slice(1);
+  // const heroPost = edges[0]?.node
+  // const morePosts = edges.slice(1)
+
+  /* TODO: replace heroPost with my thingy */
+  /* it is going to be a 3 by 3 grid, initially */
+  /* TODO: finish the individual post */
 
   return (
     <Layout preview={preview}>
@@ -19,34 +27,28 @@ export default function Index({ allPosts: { edges }, preview }) {
           muito mais...
         </title>
       </Head>
-      
-      <Link href="/covid">
-        <Jumbotron
-          path="/images/banner-covid.gif"
-          altDesc=" Banner sobre as informações do Covid-19 em Dário Meira"
-        />
-      </Link>
-      <Container>
-        {heroPost && (
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.featuredImage.node}
-            date={heroPost.date}
-            author={heroPost.author.node}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
+
+      <Box>
+        <Link href="/covid">
+          <Jumbotron
+            path="/images/banner-covid.gif"
+            altDesc=" Banner sobre as informações do Covid-19 em Dário Meira"
           />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </Link>
+      </Box>
+
+      <Container maxWidth="md">
+        <Box mb={2}>
+          <GridPosts posts={edges} />
+        </Box>
       </Container>
-      
     </Layout>
-  );
+  )
 }
 
 export async function getStaticProps({ preview = true }) {
-  const allPosts = await getAllPostsForHome(preview);
+  const allPosts = await getAllPostsForHome(preview)
   return {
     props: { allPosts, preview },
-  };
+  }
 }

@@ -20,7 +20,7 @@ export const CardDefault = (props) => {
   const classes = useStyles()
   return (
     <Card className={classes.root}>
-      <CardActionArea className={classes.action}>
+      <CardActionArea className={classes.action} href={'posts/' + props.link}>
         <CardMedia
           component="img"
           alt="Imagem de um post"

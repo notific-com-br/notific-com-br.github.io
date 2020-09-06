@@ -14,6 +14,7 @@ import { Jumbotron } from '../src/atoms'
 export default function Index({ allPosts: { edges }, preview }) {
   // const heroPost = edges[0]?.node
   // const morePosts = edges.slice(1)
+  // console.log(JSON.stringify(edges))
 
   /* TODO: replace heroPost with my thingy */
   /* it is going to be a 3 by 3 grid, initially */
@@ -27,7 +28,6 @@ export default function Index({ allPosts: { edges }, preview }) {
           muito mais...
         </title>
       </Head>
-
       <Box>
         <Link href="/covid">
           <Jumbotron
@@ -36,9 +36,8 @@ export default function Index({ allPosts: { edges }, preview }) {
           />
         </Link>
       </Box>
-
       <Container maxWidth="md">
-        <Box mb={2}>
+        <Box my={4}>
           <GridPosts posts={edges} />
         </Box>
       </Container>

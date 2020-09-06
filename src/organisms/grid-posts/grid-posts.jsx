@@ -23,10 +23,11 @@ export function GridPosts({ posts }) {
   // const classes = useStyles()
 
   const cards = posts.map((v) => (
-    <Grid item xs={4} key={v.key}>
+    <Grid item xs={4} key={v.node.slug}>
       <CardDefault
         title={v.node.title}
         img={v.node.featuredImage.node.sourceUrl}
+        link={v.node.slug}
       />
     </Grid>
   ))

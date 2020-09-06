@@ -2,9 +2,6 @@ import Head from 'next/head'
 
 import { Link, Box, Container } from '@material-ui/core'
 
-// import MoreStories from '../components/more-stories'
-// import HeroPost from '../components/hero-post'
-
 import { Layout } from '../src/templates/layout'
 import { GridPosts } from '../src/organisms'
 import { getAllPostsForHome } from '../lib/api'

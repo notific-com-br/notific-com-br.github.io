@@ -29,10 +29,10 @@ export default function Index() {
           <Box
             display="flex"
             flexDirection="column"
-            mt={4}
             style={{ marginTop: 10 }}
           >
             <Box
+              mt={2}
               display="flex"
               justifyContent="flex-end"
               alignItems="center"

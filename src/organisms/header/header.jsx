@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   AppBar,
   Container,
@@ -7,27 +7,27 @@ import {
   MenuItem,
   Toolbar,
   useMediaQuery,
-} from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import { Logo } from '../../atoms';
-import { PrimaryMenu } from '../../molecules';
-import { useStyles } from './header.styles';
+} from '@material-ui/core'
+import { useTheme } from '@material-ui/core/styles'
+import MoreIcon from '@material-ui/icons/MoreVert'
+import { Logo } from '../../atoms'
+import { PrimaryMenu } from '../../molecules'
+import { useStyles } from './header.styles'
 
 export function Header() {
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('sm'));
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const classes = useStyles();
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.up('sm'))
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const open = Boolean(anchorEl)
+  const classes = useStyles()
 
   const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
 
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   return (
     <div className={classes.root}>
@@ -67,12 +67,10 @@ export function Header() {
                     open={open}
                     onClose={handleClose}
                   >
-                    <MenuItem onClick={handleClose}>Blog</MenuItem>
-                    <MenuItem onClick={handleClose}>Sobre Nós</MenuItem>
                     <MenuItem onClick={handleClose}>Portal Covid</MenuItem>
-                    <MenuItem onClick={handleClose}>podcast</MenuItem>
-                    <MenuItem onClick={handleClose}>vídeos</MenuItem>
-                    <MenuItem onClick={handleClose}>contato</MenuItem>
+                    <MenuItem onClick={handleClose}>Vídeos</MenuItem>
+                    <MenuItem onClick={handleClose}>Contato</MenuItem>
+                    <MenuItem onClick={handleClose}>Sobre Nós</MenuItem>
                   </Menu>
                 </>
               )}
@@ -81,5 +79,5 @@ export function Header() {
         </Toolbar>
       </AppBar>
     </div>
-  );
+  )
 }

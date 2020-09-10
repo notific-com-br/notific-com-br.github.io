@@ -9,17 +9,11 @@ export function Footer() {
   return (
     <footer className={classes.root}>
       <Container>
-        <Grid
-          xs={12}
-          direction="column"
-          alignItems="center"
-          justify="center"
-          container
-        >
-          <Grid className={classes.gridItem} xs={12}>
+        <Grid direction="column" alignItems="center" justify="center" container>
+          <Grid item className={classes.gridItem} xs={12}>
             NOS ACOMPANHE NAS REDES
           </Grid>
-          <Grid className={classes.gridItem} xs={12}>
+          <Grid item className={classes.gridItem} xs={12}>
             <Link
               className={classes.link}
               href="https://www.facebook.com/notific.com.br"
@@ -53,7 +47,7 @@ export function Footer() {
               <YouTube />
             </Link>
           </Grid>
-          <Grid className={classes.gridItem} xs={12}>
+          <Grid item className={classes.gridItem} xs={12}>
             <div className={classes.copyright}>
               <img
                 className={classes.logotipo}

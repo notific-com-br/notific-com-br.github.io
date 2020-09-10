@@ -28,7 +28,8 @@ export default function Index({ allPosts: { edges }, preview }) {
       <Box>
         <Link href="/covid">
           <Jumbotron
-            path="/images/banner-covid.gif"
+            path="/images/banner-covid.png"
+            mobilePatch="/images/banner-covid-mobile.png"
             altDesc=" Banner sobre as informações do Covid-19 em Dário Meira"
           />
         </Link>

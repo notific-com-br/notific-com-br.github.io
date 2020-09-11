@@ -1,5 +1,5 @@
 {
-  "name": "Notific",
+  "name": "notific",
   "version": "0.0.1",
   "scripts": {
     "dev": "next",
@@ -9,11 +9,13 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "axios": "^0.20.0",
     "classnames": "2.2.6",
     "date-fns": "2.14.0",
     "next": "latest",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "recharts": "^1.8.5",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {

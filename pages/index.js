@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { Link, Box, Container } from '@material-ui/core'
+import { Link, Box, Container as MDContainer } from '@material-ui/core'
 
 import { Layout } from '../src/templates/layout'
 import { GridPosts } from '../src/organisms'
@@ -34,11 +34,11 @@ export default function Index({ allPosts: { edges }, preview }) {
           />
         </Link>
       </Box>
-      <Container maxWidth="md">
+      <MDContainer>
         <Box my={4}>
           <GridPosts posts={edges} />
         </Box>
-      </Container>
+      </MDContainer>
     </Layout>
   )
 }

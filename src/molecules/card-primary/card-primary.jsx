@@ -32,10 +32,10 @@ export const CardPrimary = (props) => {
                 <DateFormat dateString={props.date} />
               </Typography>
               <Typography variant="subtitle1" paragraph>
-                {props.description.replace('<p>', '').slice(0, 100) + ' [...]'}
+                {props.description.replace(/<\/?p>/, '').slice(0, 100) + ' [...]'}
               </Typography>
               <Typography variant="subtitle1" color="primary">
-                Continue reading...
+                Leia mais...
               </Typography>
             </CardContent>
           </div>

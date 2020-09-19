@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { Box, Container as MDContainer, Typography } from '@material-ui/core'
 import axios from 'axios'
-import Container from '../components/container'
 import { Chart } from '../src/molecules'
 import { Layout } from '../src/templates/layout'
 import { SinteseComponent } from '../src/molecules/covid-sintese/covid-sintese'
@@ -24,42 +23,36 @@ export default function Index() {
           classificados e muito mais...
         </title>
       </Head>
-      <Container>
-        <MDContainer>
+      <MDContainer>
+        <Box display="flex" flexDirection="column" style={{ marginTop: 10 }}>
           <Box
+            mt={2}
             display="flex"
-            flexDirection="column"
-            style={{ marginTop: 10 }}
+            justifyContent="flex-end"
+            alignItems="center"
+            flexWrap="wrap"
           >
-            <Box
-              mt={2}
-              display="flex"
-              justifyContent="flex-end"
-              alignItems="center"
-              flexWrap="wrap"
+            <Typography
+              variant="body1"
+              style={{ fontSize: '1rem', color: 'rgba(0, 0, 0, 0.54)' }}
             >
-              <Typography
-                variant="body1"
-                style={{ fontSize: '1rem', color: 'rgba(0, 0, 0, 0.54)' }}
-              >
-                Última atualização: {data[data.length - 1]?.data} às{' '}
-                {data[data.length - 1]?.hora}
-              </Typography>
-            </Box>
-            <Box mt={2}>
-              <SinteseComponent data={data} />
-            </Box>
-            <Box my={4}>
-              {data && (
-                <Chart
-                  data={data}
-                  title="Casos de covid por data de notificação"
-                />
-              )}
-            </Box>
+              Última atualização: {data[data.length - 1]?.data} às{' '}
+              {data[data.length - 1]?.hora}
+            </Typography>
           </Box>
-        </MDContainer>
-      </Container>
+          <Box mt={2}>
+            <SinteseComponent data={data} />
+          </Box>
+          <Box my={4}>
+            {data && (
+              <Chart
+                data={data}
+                title="Casos de covid por data de notificação"
+              />
+            )}
+          </Box>
+        </Box>
+      </MDContainer>
     </Layout>
   )
 }

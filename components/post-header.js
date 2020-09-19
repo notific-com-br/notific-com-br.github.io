@@ -1,5 +1,5 @@
-import Date from '../components/date'
 import Categories from '../components/categories'
+import { DateFormat } from '../src/molecules'
 
 import { Typography, Box } from '@material-ui/core'
 
@@ -23,7 +23,7 @@ export default function PostHeader({
         {title}
       </Typography>
       <Typography variant="h6" align="center">
-        Escritp por <strong>{name}</strong> dia <Date dateString={date} />
+        Escritp por <strong>{name}</strong> dia <DateFormat dateString={date} />
       </Typography>
       <Typography variant="body1" align="center">
         <Categories categories={categories} />

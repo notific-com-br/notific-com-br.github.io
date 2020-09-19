@@ -1,7 +1,7 @@
 import React from 'react'
 // import { useStyles } from './grid-posts.styles'
 
-import { CardDefault } from '../../molecules/'
+import { CardPrimary} from '../../molecules/'
 import { Grid } from '@material-ui/core'
 
 /*
@@ -24,7 +24,7 @@ export function GridPosts({ posts }) {
 
   const cards = posts.map((v) => (
     <Grid item xs={4} key={v.node.slug}>
-      <CardDefault
+      <CardPrimary
         title={v.node.title}
         img={v.node.featuredImage.node.sourceUrl}
         link={v.node.slug}

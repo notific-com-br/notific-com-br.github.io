@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useStyles } from './card-default.styles'
+import { useStyles } from './card-primary.styles'
 
 import WhatsAppIcon from '@material-ui/icons/WhatsApp'
 import FacebookIcon from '@material-ui/icons/Facebook'
@@ -16,7 +16,7 @@ import {
   Typography,
 } from '@material-ui/core'
 
-export const CardDefault = (props) => {
+export const CardPrimary = (props) => {
   const classes = useStyles()
   return (
     <Card className={classes.root}>

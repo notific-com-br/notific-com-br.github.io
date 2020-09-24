@@ -15,7 +15,7 @@ export default function PostHeader({
       ? `${author.firstName} ${author.lastName}`
       : author.name
 
-  const image = <img src={coverImage?.sourceUrl} style={{ maxWidth: '50%' }} />
+  // const image = <img src={coverImage?.sourceUrl} style={{ maxWidth: '50%' }} />
 
   return (
     <>
@@ -28,9 +28,6 @@ export default function PostHeader({
       <Typography variant="body1" align="center">
         <Categories categories={categories} />
       </Typography>
-      <Box display="flex" justifyContent="center">
-        {image}
-      </Box>
     </>
   )
 }

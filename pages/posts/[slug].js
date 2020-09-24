@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 
-import { Container, Box, Typography } from '@material-ui/core'
+import { Container, Box, Typography, Paper } from '@material-ui/core'
 
 // import PostBody from '../../components/post-body'
 // import MoreStories from '../../components/more-stories'
@@ -23,6 +23,8 @@ export default function Post({ post, posts, preview }) {
     return <ErrorPage statusCode={404} />
   }
 
+  const image = <img src={post.featuredImage.node?.sourceUrl} style={{ maxWidth: '100%' }} />
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -41,15 +43,28 @@ export default function Post({ post, posts, preview }) {
                   content={post.featuredImage?.node?.sourceUrl}
                 />
               </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.featuredImage.node}
-                date={post.date}
-                author={post.author.node}
-                categories={post.categories}
-              />
-              <Typography variant="body1">
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+              <Paper>
+                <Box p={2} mb={2}>
+                  <PostHeader
+                    title={post.title}
+                    coverImage={post.featuredImage.node}
+                    date={post.date}
+                    author={post.author.node}
+                    categories={post.categories}
+                  />
+                </Box>
+              </Paper>
+              <Typography variant="h6">
+                <Paper>
+                  <Container maxWidth="md">
+                    <Box p={2} pt={4}>
+                      <Box display="flex" justifyContent="center">
+                        {image}
+                      </Box>
+                      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                    </Box>
+                  </Container>
+                </Paper>
               </Typography>
               <footer>
                 {post.tags.edges.length > 0 && <Tags tags={post.tags} />}

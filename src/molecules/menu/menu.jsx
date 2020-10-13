@@ -12,12 +12,12 @@ export const PrimaryMenu = () => {
         </Link>
       </li>
       <li className={classes.item}>
-        <Link className={classes.link} href="/covid">
+        <Link className={classes.link} href="/videos">
           Vídeos
         </Link>
       </li>
       <li className={classes.item}>
-        <Link className={classes.link} href="/covid">
+        <Link className={classes.link} href="https://api.whatsapp.com/send?phone=5573981436444">
           Contato
         </Link>
       </li>
